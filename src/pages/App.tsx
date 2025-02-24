@@ -3,18 +3,23 @@ import { ThemeContext } from "../contexts.tsx";
 import { Outlet } from "react-router";
 
 export default function App() {
-  const [theme, setTheme] = useState("system");
+  const localTheme = localStorage.getItem("theme");
+  const [theme, setTheme] = useState(
+    localTheme != null ? localTheme : "system",
+  );
 
-  let theme1 = "";
+  localStorage.setItem("theme", theme);
+
+  let classTheme = "";
   if (theme == "system") {
-    theme1 = window.matchMedia("(prefers-color-scheme: dark)").matches
+    classTheme = window.matchMedia("(prefers-color-scheme: dark)").matches
       ? "dark"
       : "";
   } else {
-    theme1 = theme == "dark" ? "dark" : "";
+    classTheme = theme == "dark" ? "dark" : "";
   }
 
-  document.documentElement.className = theme1;
+  document.documentElement.className = classTheme;
 
   return (
     <ThemeContext.Provider value={{ theme, setTheme }}>
