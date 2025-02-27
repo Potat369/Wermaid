@@ -12,7 +12,7 @@ createRoot(document.getElementById("root")!).render(
       <Routes>
         <Route element={<App />}>
           <Route index element={<Home />} />
-          <Route path="games">
+          <Route path="game">
             <Route path="add" element={<AddGame />} />
           </Route>
         </Route>
