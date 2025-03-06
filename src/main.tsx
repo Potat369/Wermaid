@@ -6,6 +6,7 @@ import Home from "./pages/Home.tsx";
 import App from "./pages/App.tsx";
 import AddGame from "./pages/games/AddGame.tsx";
 import Game from "./pages/games/Game.tsx";
+import Discovery from "./pages/games/Discovery.tsx";
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
@@ -17,6 +18,7 @@ createRoot(document.getElementById("root")!).render(
             <Route path="add" element={<AddGame />} />
             <Route path=":slug" element={<Game />} />
           </Route>
+          <Route path="discovery" element={<Discovery />} />
         </Route>
       </Routes>
     </BrowserRouter>
