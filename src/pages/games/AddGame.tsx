@@ -49,7 +49,7 @@ export default function AddGame() {
           placeholder="somelink"
         />
         <br />
-        <input type="submit" value="Submi" />
+        <input type="submit" value="Submit" />
       </form>
     </>
   );
