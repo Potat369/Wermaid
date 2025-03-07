@@ -2,8 +2,8 @@ import { Link } from "react-router";
 
 export default function Header() {
   return (
-    <header className="flex justify-between border-b border-zinc-400 bg-zinc-100/50 p-2 backdrop-blur-sm dark:border-zinc-700 dark:bg-zinc-900/50">
-      <div className="flex items-center space-x-2">
+    <header className="flex justify-between border-b border-zinc-400 bg-zinc-100 p-1.5 dark:border-zinc-600 dark:bg-zinc-900">
+      <div className="flex items-center space-x-1.5">
         <span className="font-semibold">Wermaid</span>
         <nav className="flex space-x-2">
           <Link

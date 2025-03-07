@@ -17,7 +17,7 @@ export default function Home() {
         </h3>
         <Link
           to="/discovery"
-          className="animate-fade-in animate-delay-1200 my-48 inline-block rounded-md bg-zinc-100/50 p-2 opacity-0 ring-1 ring-zinc-400 backdrop-blur-sm transition-shadow hover:ring-zinc-500 dark:bg-zinc-900/50 dark:ring-zinc-700"
+          className="animate-fade-in animate-delay-1200 my-48 inline-block rounded-md bg-zinc-100 p-1.5 opacity-0 ring-1 ring-zinc-400 transition-shadow hover:ring-zinc-600 dark:bg-zinc-900 dark:ring-zinc-600 dark:hover:ring-zinc-400"
         >
           Get Started
         </Link>
