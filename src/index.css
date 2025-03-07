@@ -5,4 +5,20 @@
 
 @theme {
     --font-montserrat: "Montserrat";
+    --animate-fade-in: fade-in .6s cubic-bezier(0, 0.55, 0.45, 1) forwards;
+
+    @keyframes fade-in {
+        from {
+            opacity: 0;
+            transform: translateY(calc(var(--spacing) * 12))
+        }
+        to {
+            opacity: 100;
+            transform: translateY(0);
+        }
+    }
+}
+
+@utility animate-delay-* {
+    animation-delay: --value(integer)ms;
 }
