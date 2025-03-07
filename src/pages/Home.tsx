@@ -8,7 +8,12 @@ export default function Home() {
           Wermaid
         </h1>
         <h3 className="animate-fade-in animate-delay-600 mt-2 text-zinc-500 opacity-0 sm:text-xl md:text-2xl">
-          Community-driven games review website
+          <span className="hover:font-black">Community</span>
+          <span className="hover:font-thin">-</span>
+          <span className="hover:font-extralight">driven </span>
+          <span className="hover:font-medium">games </span>
+          <span className="hover:font-mono">review </span>
+          <span className="hover:font-light">website</span>
         </h3>
         <Link
           to="/discovery"
