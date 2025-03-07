@@ -1,4 +1,5 @@
 import { Link } from "react-router";
+import ThemeSwitcher from "./ThemeSwitcher.tsx";
 
 export default function Header() {
   return (
@@ -35,6 +36,7 @@ export default function Header() {
         </nav>
       </div>
       <div className="flex items-center space-x-2">
+        <ThemeSwitcher />
         <Link
           to="/account"
           className="text-zinc-500 transition-colors hover:text-current"
