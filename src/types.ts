@@ -5,7 +5,7 @@ export interface Game {
   description: string;
   genre: string;
   releaseDate: Date;
-  pictureUrl: Date;
+  pictureUrl: string;
   ratings: Array<Rating>;
 }
 
