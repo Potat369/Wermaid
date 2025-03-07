@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { ThemeContext } from "../contexts.tsx";
 import { Outlet } from "react-router";
+import Header from "../components/Header.tsx";
 
 export default function App() {
   const localTheme = localStorage.getItem("theme");
@@ -23,6 +24,7 @@ export default function App() {
 
   return (
     <ThemeContext.Provider value={{ theme, setTheme }}>
+      <Header />
       <Outlet />
     </ThemeContext.Provider>
   );
