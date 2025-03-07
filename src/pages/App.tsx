@@ -1,12 +1,12 @@
 import { useState } from "react";
-import { ThemeContext } from "../contexts.tsx";
+import { ThemeContext, themeType } from "../contexts.tsx";
 import { Outlet } from "react-router";
 import Header from "../components/Header.tsx";
 
 export default function App() {
   const localTheme = localStorage.getItem("theme");
-  const [theme, setTheme] = useState(
-    localTheme != null ? localTheme : "system",
+  const [theme, setTheme] = useState<themeType>(
+    localTheme != null ? (localTheme as themeType) : "system",
   );
 
   localStorage.setItem("theme", theme);
