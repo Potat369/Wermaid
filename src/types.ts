@@ -3,10 +3,11 @@ export interface Game {
   slug: string;
   name: string;
   description: string;
-  genre: string;
-  releaseDate: Date;
+  genres: string[];
+  links: string[];
+  releaseDate: string;
   pictureUrl: string;
-  ratings: Array<Rating>;
+  ratings: Rating[];
 }
 
 export interface Rating {
