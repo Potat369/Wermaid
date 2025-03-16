@@ -3,24 +3,33 @@ import { Link } from "react-router";
 export default function Home() {
   return (
     <>
-      <main className="mx-auto text-center">
-        <h1 className="animate-fade-in mt-36 text-4xl sm:text-5xl md:text-6xl">
-          Wermaid
-        </h1>
-        <h3 className="animate-fade-in animate-delay-600 mt-2 text-zinc-500 opacity-0 sm:text-xl md:text-2xl">
-          <span className="hover:font-black">Community</span>
-          <span className="hover:font-thin">-</span>
-          <span className="hover:font-extralight">driven </span>
-          <span className="hover:font-medium">games </span>
-          <span className="hover:font-mono">review </span>
-          <span className="hover:font-light">website</span>
-        </h3>
-        <Link
-          to="/discovery"
-          className="animate-fade-in animate-delay-1200 my-48 inline-block rounded-md bg-zinc-100 p-1.5 opacity-0 ring-1 ring-zinc-400 transition-shadow hover:ring-zinc-600 dark:bg-zinc-900 dark:ring-zinc-600 dark:hover:ring-zinc-400"
-        >
-          Get Started
-        </Link>
+      <main className="">
+        <section className="relative overflow-x-clip text-center">
+          <div className="absolute top-48 left-[40%] -z-50 size-96 -translate-x-48 -translate-y-48 animate-pulse bg-red-500/10 blur-3xl"></div>
+          <div className="absolute top-48 left-[60%] -z-50 size-96 -translate-x-48 -translate-y-48 animate-pulse bg-green-500/10 blur-3xl"></div>
+          <div className="absolute top-32 left-[50%] -z-50 size-96 -translate-x-48 -translate-y-48 animate-pulse bg-blue-500/10 blur-3xl"></div>
+          <div className="absolute top-64 left-[50%] -z-50 size-96 -translate-x-48 -translate-y-48 animate-pulse bg-yellow-500/10 blur-3xl"></div>
+          <div className="mx-auto space-y-4 py-28 font-medium">
+            <h1 className="text-6xl text-current/95 sm:text-7xl xl:text-8xl">
+              Wermaid
+            </h1>
+            <h2 className="text-xl text-current/80 sm:text-2xl">
+              Community-Driven
+              <br />
+              Game Review Website
+            </h2>
+            <Link
+              to="discovery"
+              className="inline-block rounded-md border bg-zinc-950 p-2 text-zinc-50 hover:bg-current/0 hover:text-current has-hover:blur-xs dark:border-zinc-50 dark:bg-zinc-50 dark:text-zinc-950"
+            >
+              Get Started!
+            </Link>
+          </div>
+        </section>
+        <section className="relative my-28">
+          <div className="absolute -z-50 h-full w-full bg-gray-800/5 blur-2xl"></div>
+          <div className="container mx-auto p-2"></div>
+        </section>
       </main>
     </>
   );
