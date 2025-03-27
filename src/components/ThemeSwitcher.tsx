@@ -45,7 +45,8 @@ export default function ThemeSwitcher() {
 
   return (
     <button
-      className="cursor-pointer text-zinc-500 transition-colors hover:text-current"
+      className="cursor-pointer p-2 text-zinc-500 transition-colors hover:text-current"
+      aria-label="Change theme"
       onClick={changeTheme}
     >
       {themes[theme]}
