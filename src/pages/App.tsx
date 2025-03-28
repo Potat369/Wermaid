@@ -1,31 +1,35 @@
 import { useState } from "react";
-import { ThemeContext, themeType } from "../contexts.tsx";
+import { UserContext } from "../contexts.ts";
 import { Outlet } from "react-router";
 import Header from "../components/Header.tsx";
+import { Theme, User } from "../types.ts";
+import { login } from "../utils.ts";
 
 export default function App() {
   const localTheme = localStorage.getItem("theme");
-  const [theme, setTheme] = useState<themeType>(
-    localTheme != null ? (localTheme as themeType) : "system",
-  );
+  const [theme, setTheme] = useState<Theme>((localTheme as Theme) || "system");
+  const [user, setUser] = useState<User | undefined>();
 
+  if (
+    theme == "dark" ||
+    (theme == "system" && window.matchMedia("(prefers-color-scheme: dark)"))
+  ) {
+    document.body.classList.add("dark");
+  } else {
+    document.body.classList.remove("dark");
+  }
   localStorage.setItem("theme", theme);
 
-  let classTheme = "";
-  if (theme == "system") {
-    classTheme = window.matchMedia("(prefers-color-scheme: dark)").matches
-      ? "dark"
-      : "";
-  } else {
-    classTheme = theme == "dark" ? "dark" : "";
+  if (!user) {
+    const token = localStorage.getItem("token");
+    if (token) {
+      login().then((value) => setUser(value));
+    }
   }
-
-  document.documentElement.className = classTheme;
-
   return (
-    <ThemeContext.Provider value={{ theme, setTheme }}>
-      <Header />
+    <UserContext.Provider value={{ user, setUser }}>
+      <Header themeData={{ theme, setTheme }} />
       <Outlet />
-    </ThemeContext.Provider>
+    </UserContext.Provider>
   );
 }
