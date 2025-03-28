@@ -7,6 +7,10 @@ import App from "./pages/App.tsx";
 import AddGame from "./pages/games/AddGame.tsx";
 import Game from "./pages/games/Game.tsx";
 import Discovery from "./pages/games/Discovery.tsx";
+import Profile from "./pages/Profile.tsx";
+import Login from "./pages/Login.tsx";
+import Register from "./pages/Register.tsx";
+import PrivateRoute from "./route/PrivateRoute.tsx";
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
@@ -19,6 +23,11 @@ createRoot(document.getElementById("root")!).render(
             <Route path=":slug" element={<Game />} />
           </Route>
           <Route path="discovery" element={<Discovery />} />
+          <Route element={<PrivateRoute />}>
+            <Route path="profile" element={<Profile />} />
+          </Route>
+          <Route path="login" element={<Login />} />
+          <Route path="register" element={<Register />} />
         </Route>
       </Routes>
     </BrowserRouter>
