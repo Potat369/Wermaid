@@ -10,6 +10,15 @@ export interface Game {
   ratings: Rating[];
 }
 
+export interface User {
+  id: string;
+  username: string;
+  displayName: string;
+  role: Array<Role>;
+}
+
+export type Role = "USER" | "ADMIN";
+
 export interface Rating {
   id: string;
   gameId: string;
