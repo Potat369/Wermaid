@@ -1,5 +1,4 @@
-import { useContext } from "react";
-import { ThemeContext, themeType } from "../contexts.tsx";
+import { Theme, ThemeData } from "../types.ts";
 
 const themes = {
   system: (
@@ -34,13 +33,13 @@ const themes = {
   ),
 };
 
-export default function ThemeSwitcher() {
-  const { theme, setTheme } = useContext(ThemeContext);
+export default function ThemeSwitcher({ themeData }: { themeData: ThemeData }) {
+  const { theme, setTheme } = themeData;
 
   const changeTheme = () => {
     const keys = Object.keys(themes);
     const index = keys.indexOf(theme);
-    setTheme(keys[(index + 1) % keys.length] as themeType);
+    setTheme(keys[(index + 1) % keys.length] as Theme);
   };
 
   return (
