@@ -20,7 +20,7 @@ export default function Home() {
             </h2>
             <Link
               to="discovery"
-              className="inline-block rounded-md border bg-zinc-950 p-2 text-zinc-50 hover:bg-current/0 hover:text-current has-hover:blur-xs dark:border-zinc-50 dark:bg-zinc-50 dark:text-zinc-950"
+              className="mt-8 inline-block rounded-md border bg-zinc-950 p-2 text-zinc-50 transition hover:bg-current/0 hover:text-current has-hover:blur-xs dark:border-zinc-50 dark:bg-zinc-50 dark:text-zinc-950"
             >
               Get Started!
             </Link>
