@@ -11,6 +11,8 @@ import Profile from "./pages/Profile.tsx";
 import Login from "./pages/Login.tsx";
 import Register from "./pages/Register.tsx";
 import PrivateRoute from "./route/PrivateRoute.tsx";
+import en from "javascript-time-ago/locale/en";
+import TimeAgo from "javascript-time-ago";
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
@@ -33,3 +35,5 @@ createRoot(document.getElementById("root")!).render(
     </BrowserRouter>
   </StrictMode>,
 );
+
+TimeAgo.addDefaultLocale(en);
