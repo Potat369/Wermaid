@@ -15,6 +15,7 @@ export interface User {
   username: string;
   displayName: string;
   role: Array<Role>;
+  registrationDate: string;
 }
 
 export type Role = "USER" | "ADMIN";
