@@ -20,3 +20,17 @@ export function siteName(url: string) {
 
   return name == null ? "Official Site" : name;
 }
+
+export function fetchWithToken(
+  input: RequestInfo | URL,
+  init?: RequestInit,
+): Promise<Response> {
+  if (init == undefined) {
+    init = {};
+  }
+  init.headers = {
+    ...init.headers,
+    Authorization: "Bearer " + localStorage.getItem("token"),
+  };
+  return fetch(input, init);
+}
