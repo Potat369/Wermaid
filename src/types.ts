@@ -26,3 +26,9 @@ export interface Rating {
   rating: number;
   comment?: string;
 }
+
+export type Theme = "system" | "light" | "dark";
+export type ThemeData = {
+  theme: Theme;
+  setTheme: (theme: Theme) => void;
+};
