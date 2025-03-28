@@ -21,7 +21,7 @@ export function siteName(url: string) {
   return name == null ? "Official Site" : name;
 }
 
-export function fetchWithToken(
+export async function fetchWithToken(
   input: RequestInfo | URL,
   init?: RequestInit,
 ): Promise<Response> {
