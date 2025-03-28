@@ -1,16 +1,22 @@
 import { Link } from "react-router";
 import ThemeSwitcher from "./ThemeSwitcher.tsx";
+import { ThemeData } from "../types.ts";
+import { useContext } from "react";
+import { UserContext } from "../contexts.ts";
 
-export default function Header() {
+export default function Header({ themeData }: { themeData: ThemeData }) {
+  const { user } = useContext(UserContext);
+
   return (
     <>
-      <header className="fixed top-0 z-50 w-full backdrop-blur">
+      <header className="fixed top-0 z-50 w-full bg-zinc-100/75 backdrop-blur dark:bg-zinc-900/75">
         <div className="flex justify-between p-2">
           <div className="flex items-center">
             <span className="p-2 font-semibold">Wermaid</span>
             <nav className="flex">
               <Link
                 to="/"
+                aria-label="Go to home page"
                 className="p-2 text-zinc-500 transition-colors hover:text-current"
               >
                 <svg
@@ -24,6 +30,7 @@ export default function Header() {
               </Link>
               <Link
                 to="/discovery"
+                aria-label="Go to discovery page"
                 className="p-2 text-zinc-500 transition-colors hover:text-current"
               >
                 <svg
@@ -38,19 +45,24 @@ export default function Header() {
             </nav>
           </div>
           <div className="flex items-center">
-            <ThemeSwitcher />
+            <ThemeSwitcher themeData={themeData} />
             <Link
               to="/profile"
+              aria-label="Go to profile page"
               className="p-2 text-zinc-500 transition-colors hover:text-current"
             >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 448 512"
-                fill="currentColor"
-                className="size-4"
-              >
-                <path d="M224 256A128 128 0 1 0 224 0a128 128 0 1 0 0 256zm-45.7 48C79.8 304 0 383.8 0 482.3C0 498.7 13.3 512 29.7 512l388.6 0c16.4 0 29.7-13.3 29.7-29.7C448 383.8 368.2 304 269.7 304l-91.4 0z" />
-              </svg>
+              {user ? (
+                user.displayName
+              ) : (
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 448 512"
+                  fill="currentColor"
+                  className="size-4"
+                >
+                  <path d="M224 256A128 128 0 1 0 224 0a128 128 0 1 0 0 256zm-45.7 48C79.8 304 0 383.8 0 482.3C0 498.7 13.3 512 29.7 512l388.6 0c16.4 0 29.7-13.3 29.7-29.7C448 383.8 368.2 304 269.7 304l-91.4 0z" />
+                </svg>
+              )}
             </Link>
           </div>
         </div>
