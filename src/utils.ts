@@ -1,3 +1,5 @@
+import { User } from "./types.ts";
+
 const siteNames = new Map<string, string>([
   ["play.google.com", "Google Play"],
   ["apps.apple.com", "App Store"],
@@ -33,4 +35,10 @@ export async function fetchWithToken(
     Authorization: "Bearer " + localStorage.getItem("token"),
   };
   return fetch(input, init);
+}
+
+export function login(): Promise<User> {
+  return fetchWithToken(import.meta.env.VITE_SERVER_URL + "api/v1/user").then(
+    (response) => response.json(),
+  );
 }
