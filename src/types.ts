@@ -7,7 +7,7 @@ export interface Game {
   links: string[];
   releaseDate: string;
   pictureUrl: string;
-  ratings: Rating[];
+  rating: number;
 }
 
 export interface User {
