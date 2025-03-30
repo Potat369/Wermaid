@@ -20,13 +20,21 @@ export interface User {
 
 export type Role = "USER" | "ADMIN";
 
-export interface Rating {
+type Rating = {
   id: string;
-  gameId: string;
-  userId: string;
   rating: number;
   comment?: string;
-}
+};
+
+export type GameRating = Rating & {
+  username: string;
+  displayName: string;
+};
+
+export type UserRating = Rating & {
+  slug: string;
+  name: string;
+};
 
 export type Theme = "system" | "light" | "dark";
 export type ThemeData = {
