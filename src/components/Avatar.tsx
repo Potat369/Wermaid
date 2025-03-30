@@ -1,7 +1,7 @@
 export default function Avatar({ className }: { className: string }) {
   return (
     <div
-      className={`flex items-end justify-center overflow-hidden rounded-full bg-zinc-200 text-zinc-600 dark:bg-zinc-700 dark:text-zinc-400 ${className}`}
+      className={`inline-flex items-end justify-center overflow-hidden rounded-full bg-zinc-300 text-zinc-600 dark:bg-zinc-700 dark:text-zinc-400 ${className}`}
     >
       <svg
         xmlns="http://www.w3.org/2000/svg"
