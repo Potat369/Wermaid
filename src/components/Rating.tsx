@@ -9,8 +9,6 @@ import TimeAgo from "javascript-time-ago";
 export default function Rating({ rating }: { rating: GameRating }) {
   const { user } = useContext(UserContext);
 
-  console.log(rating);
-
   return (
     <div className="flex rounded-md bg-zinc-100 p-2 *:p-2 dark:bg-zinc-900">
       <div className="w-full space-y-2">
