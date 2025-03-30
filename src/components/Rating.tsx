@@ -1,5 +1,5 @@
 import Avatar from "./Avatar.tsx";
-import { getColorFromRating } from "../utils.ts";
+import { fetchWithToken, getColorFromRating } from "../utils.ts";
 import { useContext } from "react";
 import { UserContext } from "../contexts.ts";
 import { GameRating } from "../types.ts";
@@ -8,6 +8,15 @@ import TimeAgo from "javascript-time-ago";
 
 export default function Rating({ rating }: { rating: GameRating }) {
   const { user } = useContext(UserContext);
+
+  function del() {
+    fetchWithToken(
+      import.meta.env.VITE_SERVER_URL + "api/v1/ratings/id/" + rating.id,
+      {
+        method: "DELETE",
+      },
+    ).then((response) => response.ok && window.location.reload());
+  }
 
   return (
     <div className="flex rounded-md bg-zinc-100 p-2 *:p-2 dark:bg-zinc-900">
@@ -34,6 +43,7 @@ export default function Rating({ rating }: { rating: GameRating }) {
               {user.role.includes("ADMIN") && (
                 <button
                   type="button"
+                  onClick={del}
                   className="cursor-pointer p-2 text-zinc-500 transition-colors hover:text-current"
                 >
                   <svg
