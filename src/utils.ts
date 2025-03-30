@@ -42,3 +42,9 @@ export function login(): Promise<User> {
     (response) => response.json(),
   );
 }
+
+export function getColorFromRating(rating: number) {
+  return rating == 0
+    ? "rgb(113 113 122)"
+    : `hsl(${(rating - 1) * 24}, 80%, 60%)`;
+}
