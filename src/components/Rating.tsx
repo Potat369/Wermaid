@@ -47,7 +47,7 @@ export default function Rating({ rating }: { rating: GameRating }) {
             </div>
           )}
         </div>
-        <div className="text-balance">{rating.comment}</div>
+        {rating.comment && <div className="text-balance">{rating.comment}</div>}
       </div>
     </div>
   );
