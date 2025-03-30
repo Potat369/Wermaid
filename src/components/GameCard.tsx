@@ -4,7 +4,10 @@ import { Game } from "../types.ts";
 
 export default function GameCard({ game }: { game: Game }) {
   return (
-    <Link to={"/game/" + game.slug} className="bg-zinc-100 dark:bg-zinc-900">
+    <Link
+      to={"/game/" + game.slug}
+      className="inline-block bg-zinc-100 dark:bg-zinc-900"
+    >
       <div
         className="rounded-t-md text-center font-bold text-zinc-950"
         style={{
