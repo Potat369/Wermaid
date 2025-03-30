@@ -24,6 +24,7 @@ type Rating = {
   id: string;
   rating: number;
   comment?: string;
+  date: string;
 };
 
 export type GameRating = Rating & {

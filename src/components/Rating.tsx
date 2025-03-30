@@ -4,6 +4,7 @@ import { useContext } from "react";
 import { UserContext } from "../contexts.ts";
 import { GameRating } from "../types.ts";
 import { Link } from "react-router";
+import TimeAgo from "javascript-time-ago";
 
 export default function Rating({ rating }: { rating: GameRating }) {
   const { user } = useContext(UserContext);
@@ -25,6 +26,9 @@ export default function Rating({ rating }: { rating: GameRating }) {
               className="flex aspect-square h-6 items-center rounded-full p-2 font-medium text-zinc-950"
             >
               {rating.rating}
+            </span>
+            <span className="text-zinc-500">
+              {new TimeAgo("en_US").format(new Date(rating.date))}
             </span>
           </Link>
           {user && (
