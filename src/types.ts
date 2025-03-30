@@ -1,13 +1,16 @@
 export interface Game {
-  id: string;
   slug: string;
   name: string;
+  pictureUrl: string;
+  rating: number;
+}
+
+export interface GamePage extends Game {
+  id: string;
   description: string;
   genres: string[];
   links: string[];
   releaseDate: string;
-  pictureUrl: string;
-  rating: number;
 }
 
 export interface User {
