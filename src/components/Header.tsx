@@ -9,7 +9,7 @@ export default function Header({ themeData }: { themeData: ThemeData }) {
 
   return (
     <>
-      <header className="fixed top-0 z-50 w-full bg-zinc-100/75 backdrop-blur dark:bg-zinc-900/75">
+      <header className="fixed top-0 z-30 w-full bg-zinc-100/75 backdrop-blur dark:bg-zinc-900/75">
         <div className="flex justify-between p-2">
           <div className="flex items-center">
             <span className="p-2 font-semibold">Wermaid</span>
