@@ -1,4 +1,5 @@
 import { FormEvent, useState } from "react";
+import { fetchWithToken } from "../../utils.ts";
 
 export default function AddGame() {
   const [genresCount, setGenresCount] = useState(1);
@@ -18,7 +19,7 @@ export default function AddGame() {
       Array.from(document.getElementsByClassName("link")) as HTMLInputElement[]
     ).map((value) => value.value);
 
-    fetch(import.meta.env.VITE_SERVER_URL + "api/v1/games", {
+    fetchWithToken(import.meta.env.VITE_SERVER_URL + "api/v1/games", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -36,7 +37,7 @@ export default function AddGame() {
               Name
             </legend>
             <input
-              className="md w-48 p-1.5 pt-0 focus:outline-0"
+              className="md field-sizing-content max-w-full min-w-96 p-1.5 pt-0 focus:outline-0"
               id="name"
               name="name"
               type="text"
@@ -48,7 +49,7 @@ export default function AddGame() {
               Description
             </legend>
             <textarea
-              className="w-48 p-1.5 pt-0 focus:outline-0"
+              className="field-sizing-content max-w-full min-w-96 p-1.5 pt-0 focus:outline-0"
               id="description"
               name="description"
             />
@@ -59,7 +60,7 @@ export default function AddGame() {
               Release Date
             </legend>
             <input
-              className="w-48 p-1.5 pt-0 focus:outline-0 dark:[color-scheme:dark]"
+              className="field-sizing-content max-w-full min-w-96 p-1.5 pt-0 focus:outline-0 dark:[color-scheme:dark]"
               id="release_date"
               name="releaseDate"
               type="date"
@@ -71,7 +72,7 @@ export default function AddGame() {
               Picture Url
             </legend>
             <input
-              className="w-48 p-1.5 pt-0 focus:outline-0 dark:[color-scheme:dark]"
+              className="field-sizing-content max-w-full min-w-96 p-1.5 pt-0 focus:outline-0 dark:[color-scheme:dark]"
               id="picture_rrl"
               name="pictureUrl"
               type="text"
@@ -99,7 +100,7 @@ export default function AddGame() {
             {[...Array(linksCount)].map((_, index) => (
               <input
                 key={index}
-                className="link block w-48 p-1.5 pt-0 focus:outline-0"
+                className="link block field-sizing-content max-w-full min-w-96 p-1.5 pt-0 focus:outline-0"
                 type="text"
                 placeholder="Link"
               />
@@ -127,7 +128,7 @@ export default function AddGame() {
             {[...Array(genresCount)].map((_, index) => (
               <input
                 key={index}
-                className="genre block w-48 p-1.5 pt-0 focus:outline-0"
+                className="genre block field-sizing-content max-w-full min-w-96 p-1.5 pt-0 focus:outline-0"
                 type="text"
                 placeholder="Genre"
               />
