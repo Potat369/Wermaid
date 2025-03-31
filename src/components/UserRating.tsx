@@ -25,11 +25,11 @@ export default function UserRating({ rating }: { rating: UserRatingType }) {
             to={`/game/${rating.slug}`}
             className="flex items-center space-x-2"
           >
-            <img src={rating.pictureUrl} className="size-6 rounded-full" />
+            <img src={rating.pictureUrl} className="size-6 rounded-md" />
             <span>{rating.name}</span>
             <span
               style={{ backgroundColor: getColorFromRating(rating.rating) }}
-              className="flex aspect-square h-6 items-center rounded-full p-2 font-medium text-zinc-950"
+              className="flex aspect-square h-6 items-center rounded-md p-2 font-medium text-zinc-950"
             >
               {rating.rating}
             </span>

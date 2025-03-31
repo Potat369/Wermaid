@@ -30,7 +30,7 @@ export default function GameRating({ rating }: { rating: GameRatingType }) {
             <span>{rating.displayName}</span>
             <span
               style={{ backgroundColor: getColorFromRating(rating.rating) }}
-              className="flex aspect-square h-6 items-center rounded-full p-2 font-medium text-zinc-950"
+              className="flex aspect-square h-6 items-center rounded-md p-2 font-medium text-zinc-950"
             >
               {rating.rating}
             </span>
