@@ -4,7 +4,6 @@ import { Outlet } from "react-router";
 import Header from "../components/Header.tsx";
 import { Theme, User } from "../types.ts";
 import { login } from "../utils.ts";
-import Footer from "../components/Footer.tsx";
 
 export default function App() {
   const localTheme = localStorage.getItem("theme");
@@ -31,7 +30,6 @@ export default function App() {
     <UserContext.Provider value={{ user, setUser }}>
       <Header themeData={{ theme, setTheme }} />
       <Outlet />
-      <Footer />
     </UserContext.Provider>
   );
 }
