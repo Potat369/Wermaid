@@ -252,7 +252,7 @@ export default function Game() {
             </div>
           </div>
           <div className="flex-row items-center justify-center text-center">
-            <div id="rate">1</div>
+            <div id="rate">3</div>
             <div className="block">
               <input
                 onInput={(ev) =>
