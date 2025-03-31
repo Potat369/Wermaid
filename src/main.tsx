@@ -13,6 +13,7 @@ import Register from "./pages/Register.tsx";
 import PrivateRoute from "./route/PrivateRoute.tsx";
 import en from "javascript-time-ago/locale/en";
 import TimeAgo from "javascript-time-ago";
+import Info from "./pages/Info.tsx";
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
@@ -30,6 +31,7 @@ createRoot(document.getElementById("root")!).render(
           </Route>
           <Route path="login" element={<Login />} />
           <Route path="register" element={<Register />} />
+          <Route path="info" element={<Info />} />
         </Route>
       </Routes>
     </BrowserRouter>
