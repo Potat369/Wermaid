@@ -2,11 +2,11 @@ import Avatar from "./Avatar.tsx";
 import { fetchWithToken, getColorFromRating } from "../utils.ts";
 import { useContext } from "react";
 import { UserContext } from "../contexts.ts";
-import { GameRating } from "../types.ts";
+import { GameRatingType } from "../types.ts";
 import { Link } from "react-router";
 import TimeAgo from "javascript-time-ago";
 
-export default function Rating({ rating }: { rating: GameRating }) {
+export default function GameRating({ rating }: { rating: GameRatingType }) {
   const { user } = useContext(UserContext);
 
   function del() {

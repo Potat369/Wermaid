@@ -30,12 +30,13 @@ type Rating = {
   date: string;
 };
 
-export type GameRating = Rating & {
+export type GameRatingType = Rating & {
   username: string;
   displayName: string;
 };
 
-export type UserRating = Rating & {
+export type UserRatingType = Rating & {
+  pictureUrl: string;
   slug: string;
   name: string;
 };
