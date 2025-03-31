@@ -4,7 +4,7 @@ const siteNames = new Map<string, string>([
   ["play.google.com", "Google Play"],
   ["apps.apple.com", "App Store"],
   ["store.steampowered.com", "Steam"],
-  ["overwatch.blizzard.com", "Blizzard"],
+  ["store.epicgames.com", "Epic Games"],
 ]);
 
 export function siteName(url: string) {
